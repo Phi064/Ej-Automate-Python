@@ -13,10 +13,11 @@ mov_pc = ''
 while True:
     #Elección del usuario
     print("PIEDRA, PAPEL, TIJERA")
+    #Añadido un contador de rondas
     print("RONDA " + str(ronda))
     ronda += 1
     print("Elige: (P)iedra, P(A)pel, (T)ijeras o (S)alir")
-    mov_player = str(input().lower())
+    mov_player = str(input().lower()) #Me aseguro de que se puedan usar mayúsculas y minúsculas
 
     while True:
         if mov_player == "s":
@@ -32,7 +33,8 @@ while True:
             break
         else:
             print("Por favor, introduce un valor válido")
-
+            
+    #Elección del PC
     while True:
         random_mov = random.randint(1,3)
         if random_mov == 1:
@@ -47,6 +49,8 @@ while True:
             mov_pc = 't'
             print("TIJERA")
             break
+            
+    #Comparación de los movimientos y actualización de las Victorias, Derrotas y Empates
     while True:
         if mov_player == mov_pc:
             print("EMPATE!")
@@ -76,4 +80,4 @@ while True:
             print("GANA TIJERAS!")
             victorias += 1
             break
-    print("Victorias: " + str(victorias) + " Derrotas: " + str(derrotas) + " Empates: " + str(empates))
+    print("Victorias: " + str(victorias) + " Derrotas: " + str(derrotas) + " Empates: " + str(empates)) #Resultado Actual
